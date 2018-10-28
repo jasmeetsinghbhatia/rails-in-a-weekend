@@ -6,5 +6,5 @@ brew services restart postgresql
 # To start the rails server that brings up the blog in deamon mode
 rails s -d
 
-# To start guard, that keeps an eye on changes in the project and reloads the app without restarting the server
+# To start guard that keeps an eye on changes in the project and reloads the app without restarting the server
 bundle exec guard --no-interactions
