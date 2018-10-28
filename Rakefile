@@ -17,3 +17,8 @@ task :stop do
   Process.kill 9, pid
   File.delete pid_file
 end
+
+desc 'Reset the App to clean state (DB data reset to db:seed)'
+task :reset do
+  Process.exec('rake stop db:reset db:migrate start')
+end
