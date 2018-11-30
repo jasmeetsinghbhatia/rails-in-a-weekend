@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
+<% content_for :page_title, @user.name %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<section class="section">
+  <div class="container">
+    <nav class="level">
+      <!-- Left Side-->
+      <div class="level-left">
+        <p class="level-item">
+          <%= link_to "Back", :back, class: "button is-primary" %>
+        </p>
+      </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+      <!-- Right Side-->
+      <div class="level-right">
+        <p class="level-item">
+          <%= link_to "Edit", edit_user_path(@user), class: "button is-light" %>
+        </p>
+        <p class="level-item">
+          <%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
+        </p>
+      </div>
+    </nav>
+    <hr/>
+    <div class="content">
+      <%= @user.email %>
+    </div>
+    <hr/>
+  </div>
+</section>

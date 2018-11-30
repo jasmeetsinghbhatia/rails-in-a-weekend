@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
+<% content_for :page_title, "Blog Users" %>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<section class="section">
+  <div class="container">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4">
+                <%= link_to user.name, user %>
+              </p>
+            </div>
+            <!-- Right Side edit/delete buttons-->
+            <div class="level-right">
+              <p class="level-item">
+                <%= link_to "Edit", edit_user_path(user), class: "button is-light is-small" %>
+              </p>
+              <p class="level-item">
+                <%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger is-small" %>
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            <%= user.email %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  </div>
+</section>
