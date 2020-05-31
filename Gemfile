@@ -70,7 +70,7 @@ group :development do
   # Make Errors look better
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem "actionview", ">= 5.2.2.1"
+  gem "actionview", ">= 5.2.4.3"
   gem "railties", ">= 5.2.2.1"
 end
 
