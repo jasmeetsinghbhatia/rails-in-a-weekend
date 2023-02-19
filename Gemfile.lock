@@ -16,7 +16,7 @@ GEM
       net-imap
       net-pop
       net-smtp
-    actionmailer (7.0.3)
+    actionmailer (7.0.4.1)
       actionpack (= 7.0.3)
       actionview (= 7.0.3)
       activejob (= 7.0.3)
